@@ -85,7 +85,7 @@
                             <select class="form-select mb-2  "  name="priority"  data-hide-search="true" data-placeholder="انتخاب "   tabindex="-1" aria-hidden="true">
 
                                         <option value ="choose"  selected="selected">انتخاب کنید</option>
-                                        <option value="High">بالا </option>
+                                        <option value="high">بالا </option>
                                         <option value="mid">متوسط</option>
                                         <option value="low"> پایین</option>
 
