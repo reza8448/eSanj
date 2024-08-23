@@ -1,0 +1,94 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Docemention",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/tasks": {
+            "get": {
+                "tags": [
+                    "Tasks"
+                ],
+                "description": "Get tasks",
+                "operationId": "49e73b9da657e3e2dac88d10e4ffaa4b",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "nullable": false
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "nullable": false
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "nullable": true
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "complete",
+                                                            "waiting",
+                                                            "incomplete",
+                                                            "canceled"
+                                                        ],
+                                                        "nullable": false
+                                                    },
+                                                    "priority": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "low",
+                                                            "medium",
+                                                            "high"
+                                                        ],
+                                                        "nullable": false
+                                                    },
+                                                    "expiration": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "nullable": false
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-22T15:03:17.000000Z",
+                                                        "nullable": false
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-22T15:03:17.000000Z",
+                                                        "nullable": false
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Tasks",
+            "description": "Tasks"
+        }
+    ]
+}
