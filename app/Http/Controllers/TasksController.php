@@ -134,7 +134,7 @@ class TasksController extends Controller
 
         $task = Task::create($data);
 
-        ProcessTask::dispatch($task)->onQueue($task->priority);
+        ProcessTask::dispatch($task)->onQueue($task->priority->value);
 
 
         return response()->json([
@@ -169,10 +169,10 @@ class TasksController extends Controller
 //        }
 
         $task = Task::findOrFail($id);
-        $oldPriority = $task->priority;
+        $oldPriority = $task->priority->value;
         $task->update($data);
-        if ($oldPriority !== $task->priority) {
-            ProcessTask::dispatch($task)->onQueue($task->priority);
+        if ($oldPriority !== $task->priority->value) {
+            ProcessTask::dispatch($task)->onQueue($task->priority->value);
         }
 
         return response()->json([
